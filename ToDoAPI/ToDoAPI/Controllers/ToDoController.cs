@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace SuperHeroAPI.Controllers
+namespace ToDoAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -9,15 +9,15 @@ namespace SuperHeroAPI.Controllers
     {
         [HttpGet]
 
-        public async Task<ActionResult<List<ToDo>>> GetSuperHeroes()
+        public async Task<ActionResult<List<Task>>> GetTasks()
         {
-            return new List<ToDo>
-            { new ToDo
+            return new List<Task>
+            { new Task
                 {
-                    Name = "Spider Man",
-                    FirstName = "Peter",
-                    LastName = "Parker",
-                    Place = "New York City"
+                    Info = "Complete this app",
+                    Date = DateTime.Now,
+                    Completed = false,
+                    Priority = "Medium"
                 }
             };
         }

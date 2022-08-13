@@ -2194,11 +2194,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\SuperHeroCRUD\\SuperHeroAPI\\SuperHeroAPI\\ToDoAPI.csproj",
+      "projectUniqueName": "D:\\projects\\ToDoApp\\ToDoAPI\\ToDoAPI\\ToDoAPI.csproj",
       "projectName": "ToDoAPI",
-      "projectPath": "D:\\projects\\SuperHeroCRUD\\SuperHeroAPI\\SuperHeroAPI\\ToDoAPI.csproj",
+      "projectPath": "D:\\projects\\ToDoApp\\ToDoAPI\\ToDoAPI\\ToDoAPI.csproj",
       "packagesPath": "C:\\Users\\dylan\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\SuperHeroCRUD\\SuperHeroAPI\\SuperHeroAPI\\obj\\",
+      "outputPath": "D:\\projects\\ToDoApp\\ToDoAPI\\ToDoAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dylan\\AppData\\Roaming\\NuGet\\NuGet.Config",

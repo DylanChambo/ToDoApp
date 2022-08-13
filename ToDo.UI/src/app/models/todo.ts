@@ -1,7 +1,7 @@
 export class ToDo {
     id?: number;
-    task = "";
+    info = "";
     date?: Date;
     completed = false;
-    Priority = "Medium";
+    priority = "";
 }

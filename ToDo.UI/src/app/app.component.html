@@ -7,10 +7,10 @@
   </thead>
   <tbody>
     <tr *ngFor="let task of tasks">
-      <td>{{ task.task }}</td>
-      <td>{{ task.date }}</td>
+      <td>{{ task.info }}</td>
+      <td>{{ pipe.transform(task.date, "short") }}</td>
       <td>{{ task.completed }}</td>
-      <td>{{ task.completed }}</td>
+      <td>{{ task.priority }}</td>
     </tr>
   </tbody>
 </table>

@@ -1,2 +1,2 @@
-# SuperHeroCRUD
- A Simple Superhero CRUD appllication using Angular, .NET and SQL Server  
+# ToDoApp
+ A Simple ToDo appllication using Angular, .NET and SQL Server  
