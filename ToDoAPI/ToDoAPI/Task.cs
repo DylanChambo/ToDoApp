@@ -4,10 +4,9 @@
     {
         public int Id { get; set; }
         public string Info { get; set; } = String.Empty;
-        public DateTime Date { get; set; } = DateTime.Now;
-        public Boolean Completed { get; set; } = false;
-        public string Priority { get; set; } = "Medium";
-
+        public DateTime? DueDate { get; set; } = null;
+        public string Status { get; set; } = String.Empty;
+        public string Priority { get; set; } = String.Empty;
 
     }
 }

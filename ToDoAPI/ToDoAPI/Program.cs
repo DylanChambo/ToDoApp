@@ -13,7 +13,7 @@ builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-builder.Services.AddCors(options => options.AddPolicy(name: "SuperHeroOrigins",
+builder.Services.AddCors(options => options.AddPolicy(name: "TaskOrigins",
     policy =>
     {
         policy.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
@@ -28,7 +28,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors("SuperHeroOrigins");
+app.UseCors("TaskOrigins");
 
 app.UseHttpsRedirection();
 

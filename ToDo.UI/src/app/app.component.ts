@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ToDo } from './models/todo';
-import { ToDoService } from './services/todo.service';
+import { Task } from './models/task';
+import { TaskService } from './services/task.service';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -10,11 +10,11 @@ import { DatePipe } from '@angular/common';
 })
 export class AppComponent {
   title = 'ToDo.UI';
-  tasks: ToDo[] = [];
+  tasks: Task[] = [];
   pipe = new DatePipe('en-US');
-  constructor(private superHeroService: ToDoService) {}
+  constructor(private TaskService: TaskService) {}
 
   ngOnInit() : void {
-    this.superHeroService.getSuperHeroes().subscribe((result: ToDo[]) => (this.tasks = result));
+    this.TaskService.getTasks().subscribe((result: Task[]) => (this.tasks = result));
   }
 }

@@ -8,8 +8,8 @@
   <tbody>
     <tr *ngFor="let task of tasks">
       <td>{{ task.info }}</td>
-      <td>{{ pipe.transform(task.date, "short") }}</td>
-      <td>{{ task.completed }}</td>
+      <td>{{ pipe.transform(task.dueDate, "short") }}</td>
+      <td>{{ task.status }}</td>
       <td>{{ task.priority }}</td>
     </tr>
   </tbody>

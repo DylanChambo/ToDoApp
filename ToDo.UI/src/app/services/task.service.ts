@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ToDo } from '../models/todo';
+import { Task } from '../models/task';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { environment } from 'src/environments/environment';
@@ -7,12 +7,12 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class ToDoService {
-  private url = "ToDo";
+export class TaskService {
+  private url = "Task";
 
   constructor(private http: HttpClient) { }
   
-  public getSuperHeroes() : Observable<ToDo[]> {
-    return this.http.get<ToDo[]>(`${environment.apiUrl}/${this.url}`);
+  public getTasks() : Observable<Task[]> {
+    return this.http.get<Task[]>(`${environment.apiUrl}/${this.url}`);
   }
 }
