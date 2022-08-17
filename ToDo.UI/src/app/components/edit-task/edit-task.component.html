@@ -5,10 +5,10 @@
         <input [(ngModel)]="task.info" placeholder="Task" />
     </div>
 
-    <h2>{{ task.dueDate }}</h2>
+    <h2 *ngIf="task.dueDate">{{ formatDate(task.dueDate, "medium", 'en-US') }}</h2>
     <div>
         Due Date:
-        <input [(ngModel)]="task.dueDate" placeholder="Due Date" />
+        <input type="datetime-local" [(ngModel)]="task.dueDate" placeholder="Due Date"  />
     </div>
 
     <h2>{{ task.status }}</h2>

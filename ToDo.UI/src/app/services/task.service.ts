@@ -15,4 +15,16 @@ export class TaskService {
   public getTasks() : Observable<Task[]> {
     return this.http.get<Task[]>(`${environment.apiUrl}/${this.url}`);
   }
+
+  public updateTasks(task: Task): Observable<Task[]> {
+    return this.http.put<Task[]>(`${environment.apiUrl}/${this.url}`, task);
+  }
+
+  public createTasks(task: Task): Observable<Task[]> {
+    return this.http.post<Task[]>(`${environment.apiUrl}/${this.url}`, task);
+  }
+
+  public deleteTasks(task: Task): Observable<Task[]> {
+    return this.http.delete<Task[]>(`${environment.apiUrl}/${this.url}/${task.id}`);
+  }
 }

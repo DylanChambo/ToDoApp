@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Task } from './models/task';
 import { TaskService } from './services/task.service';
-import { DatePipe } from '@angular/common';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +13,15 @@ export class AppComponent {
   tasks: Task[] = [];
   taskToEdit?: Task;
 
-  pipe = new DatePipe('en-US');
+  formatDate = formatDate;
   constructor(private TaskService: TaskService) {}
 
   ngOnInit() : void {
     this.TaskService.getTasks().subscribe((result: Task[]) => (this.tasks = result));
+  }
+
+  updateTaskList(tasks: Task[]) {
+    this.tasks = tasks;
   }
 
   initNewTask() {
