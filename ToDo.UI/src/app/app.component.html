@@ -1,5 +1,3 @@
-<button (click)="initNewTask()">Create New Task</button>
-
 <table>
   <thead>
     <th>Task</th>
@@ -18,5 +16,7 @@
     </tr>
   </tbody>
 </table>
+
+<button (click)="initNewTask()">Create New Task</button>
 
 <app-edit-task [task]="taskToEdit" (tasksUpdated)="updateTaskList($event)"></app-edit-task>
