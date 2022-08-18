@@ -9,8 +9,8 @@
     </div>
     <div>
         Status:
-        <select list="status" [(ngModel)]="task.status" placeholder="Status">
-            <option value="To Do">To Do</option>
+        <select [(ngModel)]="task.status" placeholder="Status">
+            <option value="To Do" selected>To Do</option>
             <option value="Next">Next</option>
             <option value="Doing">Doing</option>
             <option value="Done">Done</option>
@@ -20,7 +20,7 @@
         Priority:
         <select [(ngModel)]="task.priority" placeholder="Priority">
             <option value="High">High</option>
-            <option value="Medium">Medium</option>
+            <option value="Medium" selected>Medium</option>
             <option value="Low">Low</option>
         </select>
     </div>

@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    background-color: rgba(255, 255, 255, 0);
+    color: #FFFFFF;
+    font-family: sans-serif;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #191919;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.task-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-box {
+    padding:10px;
+    margin:10px 0;
+    border-radius: 5px;
+    background-color: #333;
+}

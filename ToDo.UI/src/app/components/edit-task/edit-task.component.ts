@@ -19,18 +19,21 @@ export class EditTaskComponent implements OnInit {
   formatDate = formatDate;
 
   updateTask(task: Task) {
+    this.task = undefined;
     this.taskService
     .updateTasks(task)
     .subscribe((tasks: Task[]) => this.tasksUpdated.emit(tasks));
   }
 
   deleteTask(task: Task) {
+    this.task = undefined;
     this.taskService
     .deleteTasks(task)
     .subscribe((tasks: Task[]) => this.tasksUpdated.emit(tasks));
   }
 
   createTask(task: Task) {
+    this.task = undefined;
     this.taskService
     .createTasks(task)
     .subscribe((tasks: Task[]) => this.tasksUpdated.emit(tasks));
