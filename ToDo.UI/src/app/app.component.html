@@ -1,9 +1,9 @@
 <h1 class="title">✅To Do App</h1>
 
 <div class= "tasks">
-  <div class="task-column">
-    <h2>To Do</h2>
-    <ng-container  *ngFor="let task of tasks">
+  <div class="task-column-box">
+    <h2 class="status-title todo">To Do</h2>
+    <ng-container class="task-column"  *ngFor="let task of tasks">
       <div class="task-box" *ngIf="task.status == 'To Do'">
         <button (click)="editTask(task)">
           <h3>{{ task.info }}</h3>
@@ -16,51 +16,49 @@
     </ng-container>
   </div>
   
-  <div class="task-column">
-    <h2>Next</h2>
-    <ng-container  *ngFor="let task of tasks">
+  <div class="task-column-box">
+    <h2 class="status-title next">Next</h2>
+    <ng-container class="task-column"  *ngFor="let task of tasks">
       <div class="task-box" *ngIf="task.status == 'Next'">
         <button (click)="editTask(task)">
           <h3>{{ task.info }}</h3>
           <p *ngIf="task.dueDate">{{ formatDate(task.dueDate, "medium", "en-US") }}</p>
           <p *ngIf="!task.dueDate">No Due Date</p>
-          <p>{{ task.status }}</p>
           <p class="priority" [ngStyle]="{ 'background-color': getPriorityColor(task.priority)}">{{ task.priority }}</p>
         </button>
       </div>
     </ng-container>
   </div>
 
-  <div class="task-column">
-    <h2>Doing</h2>
-    <ng-container  *ngFor="let task of tasks">
+  <div class="task-column-box">
+    <h2 class="status-title doing">Doing</h2>
+    <ng-container class="task-column" *ngFor="let task of tasks">
       
       <div class="task-box" *ngIf="task.status == 'Doing'">
         <button (click)="editTask(task)">
           <h3>{{ task.info }}</h3>
           <p *ngIf="task.dueDate">{{ formatDate(task.dueDate, "medium", "en-US") }}</p>
           <p *ngIf="!task.dueDate">No Due Date</p>
-          <p>{{ task.status }}</p>
           <p class="priority" [ngStyle]="{ 'background-color': getPriorityColor(task.priority)}">{{ task.priority }}</p>
         </button>
       </div>
     </ng-container>
   </div>
 
-  <div class="task-column">
-    <h2>Done</h2>
-    <ng-container  *ngFor="let task of tasks">
+  <div class="task-column-box">
+    <h2 class="status-title done">Done</h2>
+    <ng-container class="task-column" *ngFor="let task of tasks">
       <div class="task-box" *ngIf="task.status == 'Done'">
         <button (click)="editTask(task)">
           <h3>{{ task.info }}</h3>
           <p *ngIf="task.dueDate">{{ formatDate(task.dueDate, "medium", "en-US") }}</p>
           <p *ngIf="!task.dueDate">No Due Date</p>
-          <p>{{ task.status }}</p>
           <p class="priority" [ngStyle]="{ 'background-color': getPriorityColor(task.priority)}">{{ task.priority }}</p>
         </button>
       </div>
     </ng-container>
   </div>
+
 </div>
 
 <button (click)="initNewTask()">Create New Task</button>
