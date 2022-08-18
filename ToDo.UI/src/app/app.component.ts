@@ -31,4 +31,15 @@ export class AppComponent {
   editTask(task: Task) {
     this.taskToEdit = task;
   }
+
+  getPriorityColor(priority: string) {
+    switch (priority) {
+      case "High":
+        return "rgba(255, 0, 0, 0.4)";
+      case "Low":
+        return "rgba(120, 255, 0, 0.4)";
+      default:
+        return "rgba(255, 120, 0, 0.4)";
+    }
+  }
 }
