@@ -20,11 +20,13 @@ export class TaskComponent implements OnInit {
   }
 
   editTask(task: Task) {
-    this.taskToEdit = task;
+    this.taskToEdit = task
   }
 
   passTasks(tasks: Task[]) {
+    
     this.tasksUpdated.emit(tasks);
+    this.taskToEdit = undefined;
   }
 
   getPriorityColor(priority: string) {
