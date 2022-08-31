@@ -9,11 +9,12 @@
     <h2>To do</h2>
 
     <div
-      cdkDropList
-      [cdkDropListData]="todo"
+      cdkDropList="Todo"
+      id="ToDo"
+      [cdkDropListData]="tasks.Todo"
       class="example-list"
       (cdkDropListDropped)="drop($event)">
-      <div class="example-box" *ngFor="let task of todo" cdkDrag> {{ task.info }} </div>
+      <div class="example-box" [cdkDragData]="'ToDo'" *ngFor="let task of tasks.Todo" cdkDrag> {{ task.info }} </div>
     </div>
   </div>
 
@@ -22,10 +23,11 @@
 
     <div
       cdkDropList
-      [cdkDropListData]="done"
+      id="Done"
+      [cdkDropListData]="tasks.Done"
       class="example-list"
       (cdkDropListDropped)="drop($event)">
-      <div class="example-box" *ngFor="let item of done" cdkDrag>{{item.info}}</div>
+      <div class="example-box" [cdkDragData]="'Done'" *ngFor="let item of tasks.Done" cdkDrag>{{item.info}} </div>
     </div>
   </div>
 </div>

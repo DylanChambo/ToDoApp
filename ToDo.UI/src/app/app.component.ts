@@ -10,34 +10,38 @@ import { Task } from 'src/app/models/task';
 })
 export class AppComponent {
   title = 'ToDo.UI';
-  tasks: Task[] = [];
-
-  todo: Task[] = [];
-  next: Task[] = [];
-  doing: Task[] = [];
-  done: Task[] = [];
+  
+  tasks: {Todo: Task[], Next: Task[], Doing: Task[], Done: Task[]} = {
+    Todo: [],
+    Next: [],
+    Doing: [],
+    Done: []
+  }
 
 
   constructor(private TaskService: TaskService) {}
-  // status = ['To Do', 'Next', 'Doing', 'Done'];
 
   ngOnInit() : void {
-    var promise = this.TaskService.getTasks().subscribe((result: Task[]) => {
-      this.tasks = result;
-      for (var task of this.tasks) {
-        console.log(task)
+    this.TaskService.getTasks().subscribe((result: Task[]) => {
+      for (var task of result) {
+        console.log(task.status)
         switch (task.status) {
-          case 'To Do':
-            this.todo.push(task);
+          case 'Todo':
+            this.tasks.Todo.push(task);
             break;
           case 'Next':
-            this.next.push(task);
+            this.tasks.Next.push(task);
             break;
           case 'Doing':
-            this.doing.push(task);
+            this.tasks.Doing.push(task);
             break;
           case 'Done':
-            this.done.push(task);
+            this.tasks.Done.push(task);
+            break;
+          default:
+            task.status = 'Todo';
+            this.TaskService.updateTasks(task).subscribe();
+            this.tasks.Todo.push(task);
             break;
         }
       }
@@ -49,13 +53,19 @@ export class AppComponent {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
-      console.log(event.previousContainer)
+      
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex,
       );
+
+      const task = event.container.data[event.currentIndex];
+      task.status = event.container.id;
+      console.log(task)
+      this.TaskService.updateTasks(task).subscribe();
+      
     }
   }
 }
