@@ -2,12 +2,30 @@
   <h1>✅To Do App</h1>
 </div>
 
-<div class= "tasks">
-  <app-task-column [status]="status[0]"></app-task-column>
-  <app-task-column [status]="status[1]"></app-task-column>
-  <app-task-column [status]="status[2]"></app-task-column>
-  <app-task-column [status]="status[3]"></app-task-column>
-</div>
 
-<!--  <button (click)="initNewTask()">Create New Task</button>
-<app-edit-task [task]="taskToEdit" (tasksUpdated)="updateTaskList($event)"></app-edit-task> -->
+
+<div cdkDropListGroup>
+  <div class="example-container">
+    <h2>To do</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="todo"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let task of todo" cdkDrag> {{ task.info }} </div>
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2>Done</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="done"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of done" cdkDrag>{{item.info}}</div>
+    </div>
+  </div>
+</div>
