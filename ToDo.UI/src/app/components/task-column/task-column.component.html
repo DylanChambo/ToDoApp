@@ -5,4 +5,11 @@
             <app-task [task]="task"></app-task>
         </div>
     </ng-container>
+
+    <div class="task-box" *ngIf="taskToEdit">
+        <app-task [task]="taskToEdit"></app-task>
+    </div>
+
+    <button (click)="createTask()">+ Create New Task</button>
+
 </div>

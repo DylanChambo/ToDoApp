@@ -8,7 +8,9 @@ import { TaskService } from 'src/app/services/task.service';
   styleUrls: ['./task-column.component.css']
 })
 export class TaskColumnComponent implements OnInit {
+  taskToEdit!: Task;
   tasks: Task[] = [];
+
   @Input() status!: string;
 
   constructor(private TaskService: TaskService) {}
@@ -20,6 +22,11 @@ export class TaskColumnComponent implements OnInit {
   
   updateTaskList(tasks: Task[]) {
     this.tasks = tasks;
+  }
+
+  createTask() {
+    this.taskToEdit = new Task;
+    this.taskToEdit.status = this.status
   }
   
   // initNewTask() {
