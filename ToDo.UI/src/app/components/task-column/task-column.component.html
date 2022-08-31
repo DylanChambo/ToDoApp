@@ -1,8 +1,0 @@
-<div class="task-column-box">
-    <h2 class="status-title {{ status.toLowerCase().replace(' ','') }}">{{ status }}</h2>
-    <ng-container class="task-column" *ngFor="let task of tasks">
-        <div class="task-box" *ngIf="task.status == status">
-            <app-task [task]="task"></app-task>
-        </div>
-    </ng-container>
-</div>

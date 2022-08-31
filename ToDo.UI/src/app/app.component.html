@@ -2,12 +2,36 @@
   <h1>✅To Do App</h1>
 </div>
 
-<div class= "tasks">
-  <app-task-column [status]="status[0]"></app-task-column>
-  <app-task-column [status]="status[1]"></app-task-column>
-  <app-task-column [status]="status[2]"></app-task-column>
-  <app-task-column [status]="status[3]"></app-task-column>
-</div>
 
-<!--  <button (click)="initNewTask()">Create New Task</button>
-<app-edit-task [task]="taskToEdit" (tasksUpdated)="updateTaskList($event)"></app-edit-task> -->
+<!-- Defines the Drag and Drop Group-->
+<div cdkDropListGroup>
+  <!---Drag and Drop List: 1 - Todo-->
+  <div class="example-container">
+    <h2>To do</h2>
+    <div
+      cdkDropList="Todo"
+      id="Todo"
+      [cdkDropListData]="tasks.Todo"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" [cdkDragData]="'ToDo'" *ngFor="let task of tasks.Todo" cdkDrag> 
+        {{ task.info }} 
+      </div>
+    </div>
+  </div>
+
+  <!---Drag and Drop List: 2 - Done-->
+  <div class="example-container">
+    <h2>Done</h2>
+    <div
+      cdkDropList
+      id="Done"
+      [cdkDropListData]="tasks.Done"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" [cdkDragData]="'Done'" *ngFor="let item of tasks.Done" cdkDrag>
+        {{item.info}}
+      </div>
+    </div>
+  </div>
+</div>
