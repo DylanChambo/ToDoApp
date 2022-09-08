@@ -2,7 +2,13 @@
 <div cdkDropListGroup>
     <!---Drag and Drop List: 1 - Todo-->
     <app-task-list [status]="'ToDo'" [tasks]="tasks.Todo" (newDropEvent)="drop($event)"></app-task-list>
+
+    <!---Drag and Drop List: 2 - Todo-->
+    <app-task-list [status]="'Next'" [tasks]="tasks.Next" (newDropEvent)="drop($event)"></app-task-list>
+
+    <!---Drag and Drop List: 3 - Todo-->
+    <app-task-list [status]="'Doing'" [tasks]="tasks.Doing" (newDropEvent)="drop($event)"></app-task-list>
   
-    <!---Drag and Drop List: 2 - Done-->
+    <!---Drag and Drop List: 4 - Done-->
     <app-task-list [status]="'Done'" [tasks]="tasks.Done" (newDropEvent)="drop($event)"></app-task-list>
 </div>
