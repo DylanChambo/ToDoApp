@@ -1,0 +1,7 @@
+.task-display {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}

@@ -22,9 +22,9 @@ export class TaskComponent implements OnInit {
       case 'High':
         return '#ff0000';
       case 'Low':
-        return '#00ff00';
+        return '#22AA00';
       default:
-        return '#777700';
+        return '#BB6600';
     }
   }
 }
