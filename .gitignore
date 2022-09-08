@@ -1,11 +1,13 @@
 
 *.v2
 ToDo.UI/.vs/VSWorkspaceState.json
-*.v2
 *.v5
-*.v2
+*.suo
+*.vsidx
+
+*.sentinel
 ToDoAPI/.vs/ToDoAPI/v17/.suo
 *.v2
-ToDoAPI/.vs/ToDoAPI/FileContentIndex/1524d650-181f-45e3-ab9c-f6eb2c95f0cf.vsidx
-*.vsidx
-*.vsidx
+*.v2
+*.v5
+*.v5
