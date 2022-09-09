@@ -4,15 +4,15 @@ p {
 
 .priority {
     padding: 0.2rem 0.3rem;
-    border-radius: 10px;
+    border-radius: 1rem;
     font-size: 0.8rem;
 }
 
 .info {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 
 .date {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
