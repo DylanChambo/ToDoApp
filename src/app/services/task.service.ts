@@ -8,11 +8,11 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class TaskService {
-  private url = "Task";
+  private url = "tasks";
 
   constructor(private http: HttpClient) { }
-  
-  public getTasks() : Observable<Task[]> {
+
+  public getTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(`${environment.apiUrl}/${this.url}`);
   }
 

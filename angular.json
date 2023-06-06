@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "SuperHero.UI": {
+    "TODOAPP": {
       "projectType": "application",
       "schematics": {},
       "root": "",
